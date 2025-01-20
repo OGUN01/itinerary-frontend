@@ -295,16 +295,13 @@ export default function PreferencesSelector({
                   <Swiper
                     ref={swiperRef}
                     modules={[Navigation]}
-                    onSlideChange={(swiper) => setCurrentStep(swiper.activeIndex)}
-                    allowTouchMove={!isSubmitting}
-                    initialSlide={currentStep}
-                    noSwiping={isSubmitting}
-                    allowSlideNext={isStepValid(currentStep)}
-                    allowSlidePrev={true}
-                    preventInteractionOnTransition
-                    speed={300}
+                    spaceBetween={50}
+                    allowTouchMove={false}  // Disable touch/mouse movement
+                    simulateTouch={false}   // Disable touch simulation
+                    noSwiping={true}        // Disable swiping
+                    allowSlideNext={false}  // Only allow programmatic navigation
+                    allowSlidePrev={false}  // Only allow programmatic navigation
                     onSwiper={(swiper) => {
-                      // @ts-ignore
                       swiperRef.current = swiper;
                     }}
                     className="h-[calc(100%-120px)] mt-2"

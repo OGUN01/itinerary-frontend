@@ -29,9 +29,6 @@ export default function BudgetStep({
         budget: value,
       },
     });
-    if (value >= 100) {
-      onComplete();
-    }
   };
 
   return (
